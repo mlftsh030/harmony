@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Harmony Travel and Tours</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size: large;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #ffffff;
+            padding: 20px 0;
+            border-bottom: #0077be 3px solid;
+            position: relative;
+        }
+        .logo {
+            max-width: 300px;
+            height: auto;
+        }
+        nav {
+            float: right;
+            margin-top: 10px;
+        }
+        nav ul {
+            padding: 0;
+            list-style: none;
+        }
+        nav li {
+            display: inline;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #0077be;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #e8491d;
+        }
+
+        /* Hamburger Menu */
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            float: right;
+            margin-top: 10px;
+        }
+        .menu-icon div {
+            width: 35px;
+            height: 4px;
+            background-color: #333;
+            margin: 6px 0;
+        }
+
+        /* About Section */
+        #about {
+            padding: 20px 0;
+        }
+        .about-content {
+            flex-direction: column;
+                text-align: center;
+        }
+        .about-info {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .about-info p {
+            margin-bottom: 20px;
+        }
+        .founder-img {
+            max-width: 300px;
+            border-radius: 10px;
+        }
+
+        /* Mobile Navigation */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #0077be;
+                width: 100%;
+                z-index: 1;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            nav li {
+                display: block;
+                padding: 10px;
+            }
+            nav a {
+                color: white;
+                font-size: 18px;
+            }
+            nav a:hover {
+                color: #e8491d;
+            }
+            .menu-icon {
+                display: block;
+            }
+            .logo {
+                float: left;
+            }
+
+            /* Stack founder image and info for mobile */
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-info {
+                padding-right: 0;
+                margin-top: 20px;
+            }
+            .founder-img {
+                max-width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+
+        footer {
+            background: #0077be;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="images/logo.jpg" alt="Harmony Travel and Tours Logo" class="logo">
+            <!-- Hamburger Menu Icon -->
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <!-- Founder Image -->
+                 <div></div>
+                <img src="images/owner.png" alt="Founder Mihle Harmony Gabuza" class="founder-img">
+                
+                <!-- About Information -->
+                <div class="about-info">
+                    <p><strong>Founded in 2023</strong> by Mihle Harmony Gabuza, Harmony Travel and Tours is committed to providing exceptional travel experiences in Cape Town and the surrounding Western Cape cities. Guided by our slogan, "Travel in Tranquility," we aim to deliver seamless, enjoyable journeys that showcase the best of our vibrant region.</p>
+
+                    <p>Our mission is to offer <strong>premium transportation and tour services</strong> that ensure a tranquil and enjoyable travel experience. Committed to exceptional customer service, we strive to be the preferred choice for travelers seeking unparalleled comfort, reliability, and unforgettable journeys.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Harmony Travel and Tours. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to toggle the menu
+        function toggleMenu() {
+            var navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

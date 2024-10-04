@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+header {
+    background: #ffffff;
+    padding: 20px 0;
+    border-bottom: #0077be 3px solid;
+}
+.logo {
+    max-width: 300px;
+    height: auto;
+}
+nav {
+    float: right;
+    margin-top: 10px;
+}
+nav ul {
+    padding: 0;
+}
+nav li {
+    display: inline;
+    padding: 0 20px;
+}
+nav a {
+    color: #0077be;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+}
+nav a:hover {
+    color: #e8491d;
+}
+#showcase {
+    text-align: center;
+    color: #ffffff;
+    background-color: #0077be;
+    padding: 50px 0;
+}
+#showcase h1 {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+#showcase p {
+    font-size: 20px;
+}
+#gallery {
+    position: relative;
+    height: 400px;
+    margin: 20px 0;
+}
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.slide.active {
+    opacity: 1;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#services {
+    margin-top: 20px;
+}
+.service {
+    float: left;
+    width: 30%;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.service img {
+    width: 90px;
+    height: 90px;
+}
+footer {
+    background: #0077be;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    clear: both;
+}
+   /* Hamburger Menu */
+   .menu-icon {
+    display: none;
+    cursor: pointer;
+    float: right;
+    margin-top: 10px;
+}
+.menu-icon div {
+    width: 35px;
+    height: 4px;
+    background-color: #333;
+    margin: 6px 0;
+}
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #0077be;
+        width: 100%;
+        z-index: 1;
+    }
+    nav ul.active {
+        display: flex;
+    }
+    nav li {
+        display: block;
+        padding: 10px;
+    }
+    nav a {
+        color: white;
+        font-size: 18px;
+    }
+    nav a:hover {
+        color: #e8491d;
+    }
+    .menu-icon {
+        display: block;
+    }
+    .logo {
+        float: left;
+    }
+
+    /* Responsive Services */
+    .service {
+        flex-direction: column;
+        text-align: center;
+    }
+    .service img {
+        margin: 0 auto 15px;
+    }
+}
+
+

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Harmony Travel and Tours</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #ffffff;
+            padding: 20px 0;
+            border-bottom: #0077be 3px solid;
+        }
+        .logo {
+            max-width: 300px;
+            height: auto;
+        }
+        nav {
+            float: right;
+            margin-top: 10px;
+        }
+        nav ul {
+            padding: 0;
+        }
+        nav li {
+            display: inline;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #0077be;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #e8491d;
+        }
+        form {
+            padding: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #0077be;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #e8491d;
+        }
+        footer {
+            background: #0077be;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            clear: both;
+        }
+        .whatsapp-button {
+            background-color: #25d366;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .whatsapp-button:hover {
+            background-color: #1ebc54;
+        }
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            float: right;
+            margin-top: 10px;
+        }
+        .menu-icon div {
+            width: 35px;
+            height: 4px;
+            background-color: #000000;
+            margin: 6px 0;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #0077be;
+                width: 100%;
+                z-index: 1;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            nav li {
+                display: block;
+                padding: 10px;
+            }
+            nav a {
+                color: white;
+                font-size: 18px;
+            }
+            nav a:hover {
+                color: #e8491d;
+            }
+            .menu-icon {
+                display: block;
+            }
+            .logo {
+                float: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="images/logo.jpg" alt="Harmony Travel and Tours Logo" class="logo">
+            <!-- Hamburger Menu Icon -->
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form action="/submit_form" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+
+                <input type="submit" value="Send Message">
+            </form>
+
+            <a href="https://wa.me/27674038419" class="whatsapp-button">Chat with Us on WhatsApp</a>
+        </div>
+    </section>
+        <SCRipt>
+            function toggleMenu() {
+                var navLinks = document.getElementById('nav-links');
+                navLinks.classList.toggle('active');
+            }
+        </SCRipt>
+    <footer>
+        <p>&copy; 2024 Harmony Travel and Tours. All rights reserved.</p>
+    </footer>
+</body>
+</html>

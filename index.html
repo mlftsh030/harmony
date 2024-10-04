@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony Travel and Tours</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="images/logo.jpg" alt="Harmony Travel and Tours Logo" class="logo">
+            <!-- Hamburger Menu Icon -->
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="showcase">
+        <div class="container">
+            <h1>Travel in Tranquility</h1>
+            <p>Experience exceptional travel experiences in Cape Town and the Western Cape</p>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="slide active">
+            <img src="images/IMG-20241004-WA0004.jpg" alt="Tour Image 1">
+        </div>
+        <div class="slide">
+            <img src="images/IMG-20241004-WA0005.jpg" alt="Tour Image 2">
+        </div>
+        <div class="slide">
+            <img src="images/IMG-20241004-WA0006.jpg" alt="Tour Image 3">
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service">
+                <img src="images/IMG-20241004-WA0014.jpg" alt="Airport Transfers">
+                <h3>Airport Transfers</h3>
+                <p>Start your journey seamlessly with our reliable airport transfer service.</p>
+            </div>
+            <div class="service">
+                <img src="images/IMG-20241004-WA0014.jpg" alt="Guided Tours">
+                <h3>Guided Tours</h3>
+                <p>Explore with ease through our personalized guided tour experiences.</p>
+            </div>
+            <div class="service">
+                <img src="images/IMG-20241004-WA0014.jpg" alt="Chauffeur Services">
+                <h3>Chauffeur Services</h3>
+                <p>Experience luxury and convenience with our professional chauffeur services.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Harmony Travel and Tours. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to toggle the menu
+        function toggleMenu() {
+            var navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Simple slideshow script
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            slides[slideIndex - 1].classList.add("active");
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours - Harmony Travel and Tours</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #ffffff;
+            padding: 20px 0;
+            border-bottom: #0077be 3px solid;
+        }
+        .logo {
+            max-width: 300px;
+            height: auto;
+        }
+        nav {
+            float: right;
+            margin-top: 10px;
+        }
+        nav ul {
+            padding: 0;
+        }
+        nav li {
+            display: inline;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #0077be;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #e8491d;
+        }
+        #tours {
+            padding: 20px 0;
+        }
+        .tour {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+        .tour img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+        .tour-info h3 {
+            color: #0077be;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        footer {
+            background: #0077be;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            clear: both;
+        }
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            float: right;
+            margin-top: 10px;
+        }
+        .menu-icon div {
+            width: 35px;
+            height: 4px;
+            background-color: #000000;
+            margin: 6px 0;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #0077be;
+                width: 100%;
+                z-index: 1;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            nav li {
+                display: block;
+                padding: 10px;
+            }
+            nav a {
+                color: white;
+                font-size: 18px;
+            }
+            nav a:hover {
+                color: #e8491d;
+            }
+            .menu-icon {
+                display: block;
+            }
+            .logo {
+                float: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="images/logo.jpg" alt="Harmony Travel and Tours Logo" class="logo">
+            <!-- Hamburger Menu Icon -->
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="tours">
+        <div class="container">
+            <h2>Our Tours</h2>
+            <div class="tour" onclick="openModal('capetown')">
+                <img src="images/IMG-20241004-WA0007.jpg" alt="Cape Town City Tour">
+                <div class="tour-info">
+                    <h3>Cape Town City Tour</h3>
+                    <p>Explore the heart of Cape Town, from Table Mountain to the V&A Waterfront.</p>
+                </div>
+            </div>
+            <div class="tour" onclick="openModal('peninsula')">
+                <img src="images/IMG-20241004-WA0006.jpg" alt="Cape Point Peninsula Tour">
+                <div class="tour-info">
+                    <h3>Cape Point Peninsula Tour</h3>
+                    <p>Enjoy the stunning Cape Point landscapes and wildlife at Boulders Beach.</p>
+                </div>
+            </div>
+            <div class="tour" onclick="openModal('winelands')">
+                <img src="images/IMG-20241004-WA0010.jpg" alt="Cape Winelands Tour">
+                <div class="tour-info">
+                    <h3>Cape Winelands Tour</h3>
+                    <p>Indulge in the finest wines from Stellenbosch, Franschhoek, and Paarl.</p>
+                </div>
+            </div>
+            <!-- Add other tours here -->
+        </div>
+    </section>
+
+    <div id="tourModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalContent"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Harmony Travel and Tours. All rights reserved.</p>
+    </footer>
+
+    <script>
+        var modal = document.getElementById("tourModal");
+        var span = document.getElementsByClassName("close")[0];
+
+        function openModal(tour) {
+            modal.style.display = "block";
+            switch(tour) {
+                case 'capetown':
+                    document.getElementById("modalTitle").innerHTML = "Cape Town City Tour";
+                    document.getElementById("modalContent").innerHTML = "Discover Cape Town’s iconic landmarks like Table Mountain and Bo-Kaap.";
+                    break;
+                case 'peninsula':
+                    document.getElementById("modalTitle").innerHTML = "Cape Point Peninsula Tour";
+                    document.getElementById("modalContent").innerHTML = "Visit Cape Point, the fishing village of Hout Bay, and Boulders Beach.";
+                    break;
+                case 'winelands':
+                    document.getElementById("modalTitle").innerHTML = "Cape Winelands Tour";
+                    document.getElementById("modalContent").innerHTML = "Taste the best wines in Stellenbosch, Franschhoek, and Paarl.";
+                    break;
+                // Add modal content for other tours here
+            }
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        function toggleMenu() {
+            var navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
